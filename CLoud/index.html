@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link rel="stylesheet" href="style.css">   
+    <title>CLoud.com</title>
+
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-cloud"></i>
+                <p>CLoud</p>
+            </div>
+        </div>
+    </nav>
+    <div class="botbar">
+        <div class="botbars">
+
+        <div class="icons-bar">
+              <i class="fa-solid fa-house"></i>
+              <span class="tooltip">Home</span>
+              </div>
+        <div class="icons-bar">
+            <i class="fa-solid fa-gear"></i>
+            <span class="tooltip">Settings</span>
+
+        </div>
+        <div class="icons-bar">
+              <i class="fa-solid fa-moon"></i>
+              <span class="tooltip">Theme</span>
+        
+        </div>
+        </div>
+
+       
+    </div>
+    <div class="Contents">
+        <div class="City-weather">
+            <div class="searchbar">
+                  <input type="text" id="city-input" placeholder="Search city.." class="search-bar">
+            </div>
+            <div class="weather-box">
+                <div class="weather-status">
+                <img src="assets/Icon.png" id="weather-icon">
+            </div>
+             <div class="temp-city">
+                  <div class="temp">
+                <p id="temperature-selected">N/A</p>
+            </div>
+              <div class="city">
+                <p id="city-selected">N/A</p>
+            </div>
+             </div>     
+            <div class="info">
+                <p id="info-selected">N/A</p>
+            </div>
+           
+            <div class="info-parent">
+                <div class="info-child">
+                    <i class="fa-solid fa-droplet"></i>
+                    <p id="humidity">N/A</p>
+                    <p>Humidity</p>
+                </div>
+                <div class="info-child">
+                    <i class="fa-solid fa-wind"></i>
+                    <p id="wind-speed">N/A</p>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+
+            <div class="AI">
+                <p class="AItitle">CLoudBot:</p>
+                <div class="AI-text">
+                    <p id="AIsummary"></p>
+                </div>
+            </div>
+            </div>
+         
+        </div>
+
+        <div class="City-forecast">
+            <div class="City-forecast-content">
+            <p>Weather Forecast</p>
+            </div>
+            <div class="day-forecast">
+                <div class="title"> 
+                <p>3-Day Forecast</p>
+
+                </div>
+                <div class="daily-forecast">
+
+                    <div class="dailyBox">
+                        <p>Today</p>
+                        <p id="temp-daily">N/A</p>
+                        <img src="assets/rain.png" id="weather-icon">
+                    </div>
+
+                     <div class="dailyBox">
+                        <p>N/A</p>
+                        <p id="temp">N/A</p>
+                        <img src="assets/rain.png" id="weather-icon">
+                    </div>
+
+                     <div class="dailyBox">
+                        <p>N/A</p>
+                        <p id="temp">N/A</p>
+                        <img src="assets/rain.png" id="weather-icon">
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <div class="hour-forecast">
+                <div class="title">
+                    <p>Hourly Forecast</p>
+                </div>
+
+                <div class="hourly-forecast">
+                    <div class="hourBox">
+                    <p>Now</p>
+                    <p id="temp-hourNow">N/A</p>
+                    <img src="assets/rain.png" id="weather-icon">
+                </div>
+
+                <div class="hourBox">
+                    <p id="hour1">N/A</p>
+                    <p id="temp-hour1">N/A</p>
+                    <img src="assets/rain.png" id="weather-icon">
+                </div>
+
+                <div class="hourBox">
+                    <p id="hour2">N/A</p>
+                    <p id="temp-hour2">N/A</p>
+                    <img src="assets/rain.png id="weather-icon">
+                </div>
+
+                <div class="hourBox">
+                    <p id="hour3">N/A</p>
+                    <p id="temp-hour3">N/A</p>
+                    <img src="assets/rain.png" id="weather-icon">
+                </div>
+
+                <div class="hourBox">
+                    <p id="hour4">N/A</p>
+                    <p id="temp-hour4">N/A</p>
+                    <img src="assets/rain.png" id="weather-icon">
+                </div>
+
+                <div class="hourBox">
+                    <p id="hour5">N/A</p>
+                    <p id="temp-hour5">N/A</p>
+                    <img src="assets/rain.png" id="weather-icon">
+                </div>
+
+                </div>
+
+                
+                  
+            </div>
+
+        </div>
+    </div>
+<script src="js/cloudbot.js"></script>
+<script src="js/config.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>
