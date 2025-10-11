@@ -1,5 +1,6 @@
 const apiKey = "c3c80c25cd464567895155253250810";
 
+
 // -- para magbigay ng variable gamit and id -- //
 const searchInput = document.getElementById('city-input');
 const citySelected = document.getElementById('city-selected');

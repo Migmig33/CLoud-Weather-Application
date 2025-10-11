@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
     <link rel="stylesheet" href="style.css">   
     <title>CLoud.com</title>
-
 </head>
 <body>
     <nav>
@@ -21,12 +20,16 @@
         <div class="botbars">
 
         <div class="icons-bar">
+            <a href="index.html" class="home">
               <i class="fa-solid fa-house"></i>
               <span class="tooltip">Home</span>
+              </a>
               </div>
         <div class="icons-bar">
-            <i class="fa-solid fa-gear"></i>
-            <span class="tooltip">Settings</span>
+            <a href="settings.html" class="settings">
+                <i class="fa-solid fa-gear"></i>
+                <span class="tooltip">Settings</span>
+            </a>
 
         </div>
         <div class="icons-bar">
@@ -35,6 +38,44 @@
         
         </div>
         </div>
+
+       
+    </div>
+    <div class="CLoudBot" id="openCLoudBot">
+        <p>Ask CLoudBot</p>
+        <i class="fa-solid fa-robot"></i>
+    </div>
+     <div class="CLoudBot-content" id="CLoudBot">
+       
+       <div class="CLoudBot-title-exit">
+        <div class="CLoudBottitle">
+             <p>CLoudBot</p>
+             <i class="fa-solid fa-robot"></i>
+        </div>
+    
+        <div class="exit-cloudbot">
+             <i class="fa-regular fa-circle-xmark" id="closeCLoudBot"></i>
+
+        </div>
+
+       </div>
+       <div class="CLoudBotchats" id="togglechat">
+        <i class="fa-solid fa-robot"></i>        
+       </div>
+       <div class="CLoudBot-chatlog">
+        <div class="CLoudBotresponses" id="CLoudBotresponses">
+             <i class="fa-solid fa-robot"></i>        
+             <p>HELLO</p>
+
+        </div>
+
+        <div class="CLoudBotresponses" id="CLoudBotresponses">
+             <i class="fa-solid fa-robot"></i>        
+             <p>HELLO</p>
+
+        </div>
+       
+       </div>
 
        
     </div>
@@ -58,7 +99,6 @@
             <div class="info">
                 <p id="info-selected">N/A</p>
             </div>
-           
             <div class="info-parent">
                 <div class="info-child">
                     <i class="fa-solid fa-droplet"></i>
@@ -71,17 +111,18 @@
                     <p>Wind Speed</p>
                 </div>
             </div>
-
             <div class="AI">
-                <p class="AItitle">CLoudBot:</p>
-                <div class="AI-text">
-                    <p id="AIsummary"></p>
-                </div>
+                 <p class="AItitle">CLoudBot:</p>
+            <div class="AI-text">
+                 <p id="AIsummary"></p>
             </div>
-            </div>
-         
         </div>
-
+        </div>
+        
+       
+        </div>
+      
+         
         <div class="City-forecast">
             <div class="City-forecast-content">
             <p>Weather Forecast</p>
@@ -136,7 +177,7 @@
                 <div class="hourBox">
                     <p id="hour2">N/A</p>
                     <p id="temp-hour2">N/A</p>
-                    <img src="assets/rain.png id="weather-icon">
+                    <img src="assets/rain.png" id="weather-icon">
                 </div>
 
                 <div class="hourBox">
@@ -167,6 +208,6 @@
     </div>
 <script src="js/cloudbot.js"></script>
 <script src="js/config.js"></script>
-<script src="js/theme.js"></script>
+<script src="js/ui.js"></script>
 </body>
 </html>

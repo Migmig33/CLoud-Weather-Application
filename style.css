@@ -6,15 +6,15 @@
 }
 body{
     color: aliceblue;
-    background-color: black;
-
+    background: linear-gradient(90deg, #000000, #1a1a1a);
 }
 .light-mode{
-    background-color: rgb(36, 53, 81);
+    background: linear-gradient(90deg, #a6a6a6, #ffffff);
     color: black;
 }
 .light-mode nav,
 .light-mode .botbars,
+.light-mode .icons-bar a,
 .light-mode .day-forecast,
 .light-mode .hour-forecast,
 .light-mode .search-bar,
@@ -26,10 +26,10 @@ body{
 .light-mode .hourBox{ 
     background-color: rgba(130, 122, 122, 0.85);
 }
-.light-mode .City-forecast,
-.light-mode .City-weather{
-    background-color: rgb(181, 179, 179);
+.light-mode .CLoudBot{
+    background: linear-gradient(90deg, #a6a6a6, #ffffff);
 }
+
 .light-mode .weather-box{
     background-color: white;
 }
@@ -38,6 +38,9 @@ body{
 .light-mode .day-forecast{
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.85);
 
+}
+.light-mode .CLoudBot-content{
+    background: linear-gradient(90deg, #a6a6a6, #ffffff);
 }
 
 nav{
@@ -82,6 +85,21 @@ nav{
     flex-direction: column;
     gap: 2px;
     align-items: center;
+    
+}
+.icons-bar a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.settings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .tooltip{
     font-size: 10px;
@@ -94,6 +112,98 @@ nav{
     transform: scale(1.5);
 }
 
+.CLoudBot{
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(130, 122, 122, 0.85);
+    background: linear-gradient(90deg, #000000, #1a1a1a);
+    right: 0;
+    bottom: 0;
+    margin-bottom: 100px;
+    z-index: 999;
+    width: 150px;
+    padding: 20px;
+    border-top-left-radius: 12px;
+    box-shadow: 0 2px 10px rgb(126, 129, 132);
+    display: flex;
+    transition: 0.4s ease;
+}
+.CLoudBot:hover{
+    transform: scale(1.05);
+
+}
+.CLoudBot i{
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+.CLoudBot-content{
+    position: fixed;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    right: -300px;
+    z-index: 1000;
+    background:  linear-gradient(90deg, #000000, #1a1a1a);
+    height: 100%;
+    width: 300px;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+}
+
+.CLoudBot-content.active{
+    right: 0;
+}
+
+
+.CLoudBot-title-exit{
+    position: absolute;
+    display: flex;
+    gap: 160px;
+    margin-left: 10px;
+    top: 10px;
+}
+.CLoudBottitle{
+    display: flex;
+    gap: 5px;
+}
+.CLoudBottitle i{
+    margin-top: 4px;
+
+}
+.CLoudBot-title i{
+    margin-top: 4px;
+}
+.CLoudBotchats{
+    position: absolute;
+    right: 10px;
+    bottom: 25%;
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 50%;
+}
+.CLoudBot-chatlog{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 70px 0 -70px 20px;
+
+}
+.CLoudBotresponses{
+    display: flex;
+    gap: 10px;
+}
+.CLoudBotresponses i{
+    margin-top: 11px;
+
+}
+.CLoudBotresponses p{
+    font-size: 12px;
+    padding: 10px;
+    background-color: aliceblue;
+    color: #000000;
+    border-radius: 12px;
+}
 .Contents{
     display: flex;
     flex-wrap: wrap;
@@ -103,7 +213,6 @@ nav{
 
 
 .City-weather{
-    background-color: rgba(20, 20, 20, 0.85);
     flex: 1 1;
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
@@ -186,7 +295,7 @@ nav{
 }
 .AI{
     border-radius: 12px;
-    margin-left: 50px;
+    margin-left: 20px;
 
   
     
@@ -213,7 +322,6 @@ nav{
 
 
 .City-forecast{
-    background-color: rgba(20, 20, 20, 0.85);
     flex: 1 1 auto;
     padding-bottom: 50px;
 
@@ -225,15 +333,16 @@ nav{
 .day-forecast{
      margin: 10px;
      background-color: rgb(0, 0, 0);
-    border-radius: 12px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    box-shadow: 0px 1px 10px rgba(72, 69, 69, 0.85);
+     border-radius: 12px;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     box-shadow: 0px 1px 10px rgba(72, 69, 69, 0.85);
 
 }
 .title{
     margin-left: 20px;
-}
+    
+}   
 .daily-forecast{
     margin-top: 20px;
     display: flex;
