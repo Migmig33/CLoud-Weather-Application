@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
-    <link rel="stylesheet" href="style.css">   
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cloudbot.css">
     <title>CLoud.com</title>
 </head>
 <body>
@@ -59,26 +60,25 @@
         </div>
 
        </div>
-       <div class="CLoudBotchats" id="togglechat">
-        <i class="fa-solid fa-robot"></i>        
-       </div>
-       <div class="CLoudBot-chatlog">
+      
+       <div class="CLoudBot-chatlog" id="chatlog">
         <div class="CLoudBotresponses" id="CLoudBotresponses">
              <i class="fa-solid fa-robot"></i>        
-             <p>HELLO</p>
-
+             <p>Hello</p>
         </div>
-
-        <div class="CLoudBotresponses" id="CLoudBotresponses">
-             <i class="fa-solid fa-robot"></i>        
-             <p>HELLO</p>
-
-        </div>
-       
        </div>
 
        
     </div>
+     <div class="CLoudBotchats" id="toggleselect">
+         <select id="user_input">
+        <option value="">Ask CloudBot</option>
+         <option value="What is the weather today?">What is the weather today?</option>
+         <option value="What are the chances of rain?">What are the chances of rain later?</option>
+         </select>
+         <button id="send-btn">Send</button>
+       
+       </div>
     <div class="Contents">
         <div class="City-weather">
             <div class="searchbar">
@@ -206,7 +206,7 @@
 
         </div>
     </div>
-<script src="js/cloudbot.js"></script>
+<script src="js/cloudbots.js"></script>
 <script src="js/config.js"></script>
 <script src="js/ui.js"></script>
 </body>

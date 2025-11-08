@@ -11,7 +11,7 @@ const windEl = document.getElementById('wind-speed');
 const weatherIcon = document.getElementById('weather-icon');
 
 
-// -- niggaa potangina -- //
+
 // -- para sa mga forecast gamit ang class --//
 const dailyBoxes = document.querySelectorAll('.dailyBox');
 const hourBoxes = document.querySelectorAll('.hourBox');
