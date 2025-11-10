@@ -1,3 +1,5 @@
+
+
 // -- para sa variable ni CLoudBot --//
 function generateSummary(data){
     const AIsummary = document.getElementById('AIsummary');
@@ -35,10 +37,6 @@ function typeText(element, text, speed= 15){
             setTimeout(type, speed);
 
          }
-         
-
-
-
     }
     type();
 }
@@ -50,13 +48,16 @@ typeText(AIsummary, summary);
 const openCLoudBot = document.getElementById("openCLoudBot");
 const CLoudBot = document.getElementById("CLoudBot");
 const closeCLoudBot =  document.getElementById("closeCLoudBot");
+const toggleselect = document.getElementById("toggleselect");
 
 openCLoudBot.addEventListener("click", () => {
-    CLoudBot.classList.add("active")
+    CLoudBot.classList.add("active");
+    toggleselect.classList.add("toggle");
 });
 
 closeCLoudBot.addEventListener("click", () => {
-    CLoudBot.classList.remove("active")
+    CLoudBot.classList.remove("active");
+    toggleselect.classList.remove("toggle");
 });
 
 //chatcloudbot
@@ -92,28 +93,69 @@ function appendUserMessage(message){
 
 }
 
+async function sendToGemeni(userMessage, lat, lon) {
+    try{
 
-//response
-function responseMessage(userMessage){
-    const response = {
-        "What is the weather today?" : "NIGGA MAULAN",
-        "What are the chances of rain?" : "bagyo mamaya sah"
-    };
-    return response[userMessage] || "WALA AYAW GUMANA";
+     
+        const response = await fetch('http://localhost:5000/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                message: userMessage,
+                longitude: lon,
+                latitude: lat
+            })
+        });
+
+        if(!response.ok){
+            throw new Error(`Server error: ${response.status}`);
+        }
+        const data = await response.json();
+        return data.response;
+
+    }catch(error){
+        console.log(`Error: `, error);
+        return `Sorry, I'm having trouble connecting. Please make sure you're connected to the internet. Error: ${error.message}`;
+    }
+
 }
-
 //send-btn
-function sendMessage(){
+async function sendMessage(){
     const userMessage = userinput.value;
     if (!userMessage) return;
     appendUserMessage(userMessage);
     userinput.value = "";
 
-    setTimeout(() =>{
-        const reply = responseMessage(userMessage);
+    if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(
+            async (position) => {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                const reply = await sendToGemeni(userMessage, lat, lon);
+                appendBotMessage(reply);
+                
+            },
+            async (error) => {
+                console.log("Location Denied Access or Unavailable: ", error);
+                const reply = await sendToGemeni(userMessage, null, null);
+                appendBotMessage(reply);
+            }
+        )
+    }else{
+        const reply = await sendToGemeni(userMessage, null, null);
         appendBotMessage(reply);
-    }, 600);
+    }
 
 }
-
+// for send-btn
 sendbtn.addEventListener('click', sendMessage);
+//enter function so if i press enter the mesage will send
+userinput.addEventListener('keypress', function(e){
+    if (e.key === 'Enter'){
+        sendMessage();
+    }
+});
+
+  

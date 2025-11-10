@@ -63,21 +63,20 @@
       
        <div class="CLoudBot-chatlog" id="chatlog">
         <div class="CLoudBotresponses" id="CLoudBotresponses">
-             <i class="fa-solid fa-robot"></i>        
-             <p>Hello</p>
         </div>
        </div>
 
        
     </div>
      <div class="CLoudBotchats" id="toggleselect">
-         <select id="user_input">
-        <option value="">Ask CloudBot</option>
-         <option value="What is the weather today?">What is the weather today?</option>
-         <option value="What are the chances of rain?">What are the chances of rain later?</option>
-         </select>
-         <button id="send-btn">Send</button>
-       
+        <select name="select" id="user_input">
+            <option value="What's the weather here in my current location?">What's the weather here in my current location?</option>
+            <option value="Will it rain later?">Will it rain later?</option>
+            <option value="What's the temperature right now?">What's the temperature right now?</option>
+            <option value="How windy is it today?">How windy is it today?</option>
+            <option value="What's the weather tomorrow?">What's the weather tomorrow?</option>
+        </select>
+        <button id="send-btn" class="send-btn">Ask</button>
        </div>
     <div class="Contents">
         <div class="City-weather">
