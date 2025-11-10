@@ -1,0 +1,26 @@
+{
+  "name": "cloud-weather-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Migmig33/CLoud-Weather-Application.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Migmig33/CLoud-Weather-Application/issues"
+  },
+  "homepage": "https://github.com/Migmig33/CLoud-Weather-Application#readme",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.13.2",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
