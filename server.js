@@ -16,8 +16,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 
 // === API KEYSSS === //
-const AI_KEY = "AIzaSyCI1kVtP4NN1mkfm5ulkQTlUJqb375vMus";
-const WEATHER_KEY = "c3c80c25cd464567895155253250810";
+const AI_KEY = process.env.API_AI_KEY;
+const WEATHER_KEY = process.env.WEATHER_API_KEY;
 
 // === Setup AI === //
 const genAI = new GoogleGenerativeAI(AI_KEY);
