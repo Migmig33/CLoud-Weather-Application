@@ -35,7 +35,7 @@ const model = genAI.getGenerativeModel({
 
 // === Routes === //
 app.get("/", (req, res) => {
-    res.send("CLOUDBOT IS RUNNING");
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.post("/chat", async (req, res) =>{
@@ -88,7 +88,7 @@ async function getWeatherByCoords(lat, lon){
     }
 }
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`CLoudbot running on http://localhost:${PORT}`);
 });
