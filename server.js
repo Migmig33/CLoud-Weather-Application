@@ -4,7 +4,8 @@ import axios from "axios";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import path from "path";
 import { fileURLToPath } from "url";
-
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -15,7 +16,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, "public")));
 
 
-// === API KEYSSS === //
+// === API KEYSSS ENCRYPTED === //
 const AI_KEY = process.env.API_AI_KEY;
 const WEATHER_KEY = process.env.WEATHER_API_KEY;
 
@@ -52,6 +53,7 @@ app.post("/chat", async (req, res) =>{
                 "Sorry, i'm unable to detect your location. May unavailable or denied",
             });
         }
+
         const weather_data = await getWeatherByCoords(latitude, longitude);
         if (!weather_data){
             return res.json({
@@ -65,16 +67,20 @@ app.post("/chat", async (req, res) =>{
         ${JSON.stringify(weather_data, null, 2)}
         `;
 
+
         const instruction = await model.generateContent(prompt);
         const reply = instruction.response.text();
         
         res.json({ response: reply });
       
+
 } catch(err){
     console.log("Error: ", err);
     res.status(500).json({ error: err.message });
 }
 });
+
+
 
 async function getWeatherByCoords(lat, lon){
     const url = `https://api.weatherapi.com/v1/forecast.json?key=${WEATHER_KEY}&q=${lat},${lon}&days=3&aqi=no&alerts=no`;

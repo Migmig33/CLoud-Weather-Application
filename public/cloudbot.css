@@ -32,7 +32,7 @@
     right: -500px;
     z-index: 9999;
     background:  linear-gradient(90deg, #000000, #1a1a1a);
-    height: 80%;
+    height: 100%;
     width: 350px;
     text-align: center;
     transition: 0.5s ease-in-out;
@@ -99,8 +99,8 @@ select{
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin: 70px 0 -70px 20px;
-    margin-bottom: 150px;
+    margin: 70px 0 -40px 20px;
+    margin-bottom: 100px;
 
 }
 .CLoudBotresponses{
@@ -142,14 +142,18 @@ select{
 
 @media(max-width: 480px){
     .CLoudBot-content{
-        width: 200px;
+        width: 300px;
     }
     .CLoudBotchats{
-        width: 180px;
+        width: 280px;
     }
     select{
-        width: 150px;
+        width: 220px;
     }
+    .CLoudBot-chatlog{
+        margin: 20px 0 -20px 10px;
+    }
+    
 }
 
 @media(min-height: 600px){
